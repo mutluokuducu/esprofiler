@@ -42,7 +42,7 @@ class AuthenticationServiceImplTest {
     attributes.put("given_name", "John");
     attributes.put("family_name", "Doe");
     attributes.put("name", "John Doe");
-    attributes.put("vendor_id", "12345");
+    attributes.put("vendor_id", "2cc40d4d-36c7-4c60-b15c-761dded8abb5");
 
     OAuth2User principal = new DefaultOAuth2User(authorities, attributes, "name");
 
@@ -64,7 +64,7 @@ class AuthenticationServiceImplTest {
 
   @Test
   void verifyVendorVID_WithMatchingVID_ReturnsTrue() {
-    boolean result = authenticationServiceImpl.verifyVendorVID(oauth2AuthenticationToken, "12345");
+    boolean result = authenticationServiceImpl.verifyVendorVID(oauth2AuthenticationToken, "2cc40d4d-36c7-4c60-b15c-761dded8abb5");
     assertTrue(result);
   }
 }

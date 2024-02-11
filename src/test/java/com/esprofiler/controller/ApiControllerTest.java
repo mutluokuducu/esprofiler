@@ -64,7 +64,7 @@ class ApiControllerTest {
 
   @Test
   void specificVendor_WithCorrectVID_ReturnsVendorDetails() {
-    String vid = "valid-vid";
+    String vid = "2cc40d4d-36c7-4c60-b15c-761dded8abb5";
     Map<String, Object> serviceReturnedDetails = new HashMap<>();
     serviceReturnedDetails.put("name", "John Doe");
     serviceReturnedDetails.put("role", "USER");
