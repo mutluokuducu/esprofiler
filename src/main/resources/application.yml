@@ -1,0 +1,35 @@
+server:
+  port: 9994
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+    jpa:
+      database-platform: org.hibernate.dialect.H2Dialect
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+  security:
+    oauth2:
+      client:
+        registration:
+          esprofiler:
+            clientId: 8ljvvkv89h1q8m5ar2ke4lttu
+            clientSecret: # If your app client doesn't use a secret, leave this blank
+            scope: openid, email, phone, profile
+            redirect-uri: http://localhost:9994 # Needs Updated redirect URI must be http://localhost:9994/login/oauth2/code/cognito
+            # more infohttps://spring.io/guides/tutorials/spring-boot-oauth2
+            authorization-grant-type: authorization_code
+        provider:
+          esprofiler:
+            issuerUri: https://cognito-idp.eu-west-2.amazonaws.com/eu-west-2_Ubqs9tpN5
+            userNameAttribute: esprofiler:username
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+
